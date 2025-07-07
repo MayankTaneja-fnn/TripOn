@@ -153,8 +153,12 @@ server.post("/delete_restaurant/:name",jwtAuth,listItemsController.deleteRestaur
 
 server.get("/messages",jwtAuth,messagesController.getMessage);
 
-app.listen(8080,()=>{
-    connectToMongoDb();
+connectToMongoDb().then(() => {
+  app.listen(PORT, () => {
+    console.log(`✅ Server started on port ${PORT}`);
+  });
+}).catch((err) => {
+  console.error("❌ Failed to connect to MongoDB Atlas:", err);
 });
 
 // app.listen(8080);
