@@ -153,6 +153,9 @@ server.post("/delete_restaurant/:name",jwtAuth,listItemsController.deleteRestaur
 
 server.get("/messages",jwtAuth,messagesController.getMessage);
 
+const PORT = process.env.PORT || 8080;
+
+
 connectToMongoDb().then(() => {
   app.listen(PORT, () => {
     console.log(`✅ Server started on port ${PORT}`);
