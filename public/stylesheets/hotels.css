@@ -1,0 +1,88 @@
+
+
+.search-bar{
+    margin-left: 30vw;
+    margin-top: 7vw;
+    width: 40vw;
+    height: 2vw;
+    border-radius: 5px;
+}
+
+.search-button{
+    height: 2vw;
+    width: 4vw;
+    border-radius: 4px;
+}
+
+.swiper-container{
+    margin-bottom: 4vw;
+}
+
+.search-button:hover{
+    background-color: aqua;
+}
+
+.hotels-container{
+    display: grid;
+    border-color: black;
+    border:6px;
+}
+
+.hotel-container{
+    margin-bottom: 3vw;
+    display: flex;
+    height: 20vw;
+    width: 70vw;
+    margin-left: 20vw;
+}
+
+.image-container{
+    display: inline;
+    border:2px solid rgb(86, 30, 30);
+    border-radius: 10px;
+}
+
+.hotel-image{
+    height: 19.79vw;
+    width: 30vw;
+    border-radius: 10px;
+}
+
+.hotel-detail{
+    border:2px solid rgb(86, 30, 30);
+    border-radius: 10px;
+    width: 40vw;
+    /* margin-left: 2vw; */
+    display: inline;
+    text-decoration: none;
+}
+
+.hotel-name{
+    font-size: 30px;
+    font-weight: bold;
+    font-family: Colonna MT;
+    margin-left: 2vw;
+    color: rgb(27, 25, 80);
+    text-decoration: none;
+}
+
+.hotel-address{
+    margin-left: 2vw;
+    margin-top: -30px;
+}
+
+.hotel-rating{
+    margin-left: 3vw;
+    border: 3px solid rgb(47, 24, 80);
+    border-radius: 6px;
+    width:50px;
+    text-align: center;
+    font-weight: bold;
+    color: rgb(42, 92, 92);
+}
+
+.hotel-price{
+    margin-left: 3vw;
+    font-size: 20px;
+    font-weight: bold;
+}

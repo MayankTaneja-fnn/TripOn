@@ -1,0 +1,46 @@
+<form class="search-form" id="searchForm">
+    <input class="search-bar" id="searchInput" type="text" placeholder="Search for a hotel"/>
+    <button class="search-button" type="submit">Search</button>
+</form>
+<script>
+    document.getElementById('searchForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent the default form submission
+        const query = document.getElementById('searchInput').value;
+        const actionURL = `/hotels/filter/${encodeURIComponent(query)}`;
+        this.action = actionURL;
+        this.submit(); // Submit the form with the updated action
+    });
+</script>
+<p>Suggested</p>
+
+<div class="hotels-container">
+    <% hotels.forEach((hotel)=>{ %>
+        <%if(locals.email===hotel.user_email){%>
+            <form method="get" action="/edit_hotel/<%=hotel.name%>">
+           <button id="edit-review-button">Edit review</button> 
+        </form>
+        <form method="post" action="/delete_hotel/<%=hotel.name%>">
+            <button id="delete-review-button">Delete review</button>
+        </form>
+        <%}%>
+        <div class="hotel-container">
+            <div class="image-container">
+                <img src="<%=hotel.image[0]%>" class="hotel-image"/>
+            </div>
+            <div class="hotel-detail">
+                <a href="/hotels/<%=hotel.name%>">
+                <p class="hotel-name"><%=hotel.name%></p>
+            </a>
+                <p class="hotel-address">
+                    <img class="pin" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRr7pFcaP_n6hFoMX0P5kQe5X4FQ4O7zt7GfQ&s"/>
+                    <span class="state-name"><%=hotel.address%></span>
+                </p>
+                <div class="hotel-rating"><%=hotel.rating%></div>
+                <p class="hotel-price"> ₹ <%=hotel.price%></p>
+            </div>
+        </div>
+   <% })%>
+
+   
+     
+</div>

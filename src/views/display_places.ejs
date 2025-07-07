@@ -1,0 +1,41 @@
+<form class="search-form-places" id="searchForm">
+    <input class="search-bar-places" id="searchInput" type="text" placeholder="Search for a Place"/>
+    <button class="search-button-places" type="submit">Search</button>
+</form>
+<script>
+    document.getElementById('searchForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent the default form submission
+        const query = document.getElementById('searchInput').value;
+        const actionURL = `/places/filter/${encodeURIComponent(query)}`;
+        this.action = actionURL;
+        this.submit(); // Submit the form with the updated action
+    });
+</script>
+<p>Suggested</p>
+
+
+    <div class="display_places-container"></div>
+    <% places.forEach((place)=>{ %>
+        <div class="display_place-container">
+            <div class="display_image-container">
+                <a href="/places/<%=place.name%>">
+                <img src="<%=place.image[0]%>" class="display_place-image"/></a>
+            </div>
+            <div class="display_place-detail">
+                <a href="/places/<%=place.name%>">
+                <div class="display_place-name"><%=place.name%></div>
+            </a>
+                <div class="display_place-address">
+                    <img class="pin" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRr7pFcaP_n6hFoMX0P5kQe5X4FQ4O7zt7GfQ&s"/>
+                    <span class="state-name"><%=place.state%></span>
+                </div>
+                <div class="display_place-about"><%=place.desc%></div>
+            </div>
+        </div>   
+    
+   <% })%>
+</div>
+   
+     
+     
+</div>

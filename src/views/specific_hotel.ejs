@@ -1,0 +1,98 @@
+<div class="temp-place">India > <%=hotel.state%> > <%=hotel.place%></div>
+<div class="swiper-container">
+    <a class="prev" onclick="changeSlides(-1)">❮</a>
+    <a class="next" onclick="changeSlides(1)">❯</a>
+        <!-- <div class="swiper-slide"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaPuFoTkIjcYoBosZlfFf28UuTjaj-4K24og&s" alt="Image 1"></div> -->
+            <!-- <div class="swiper-slide"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRP9kEDAIliAI7VB9b0F879fAbBR-rt0BoydA&s" alt="Image 2"></div>
+            <div class="swiper-slide"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkwUw6LaadfZ7x3cJA7vg3z3H9Vm-3YFsXRQ&s" alt="Image 3"></div> -->
+    <% hotel.image.forEach(image1=>{ %>
+        <div class="swiper-slide">
+            <img src="<%= image1%>" class="image"/>
+        </div>
+   <% })%>
+    
+  
+</div>
+
+<div class="specific-place-name">
+    <%=hotel.name%>
+</div>
+<div class="hotel-rating"><%=hotel.rating%></div>
+
+<div>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRr7pFcaP_n6hFoMX0P5kQe5X4FQ4O7zt7GfQ&s" class="pin"/>
+    <span class="state-name"><%=hotel.address%>, <%=hotel.place%> ,<%=hotel.state%> India</span>
+</div>
+
+<hr/>
+
+<div>
+    <p class="hotel-price">₹ <%=hotel.price%></p>
+</div>
+
+<div ><p class="place-heading">
+    About
+</p>
+<p class="place-about"><%=hotel.desc%></p>
+</div>
+<hr/>
+
+
+
+
+<div class="reviews">
+    <p class="place-heading">User-reviews</p>   
+    <div class="add-review"><a href="/add_review/hotels/<%=hotel.name%>"> Add your review</a></div>
+    <div class="user-reviews">
+    <% hotel.user_review.forEach((review,i)=>{%>
+        <%if(locals.email===review.user_email){%>
+            <form method="get" action="/update_review/hotels/<%=hotel.name%>">
+           <button id="edit-review-button">Edit review</button> 
+        </form>
+        <form method="post" action="/delete_review/hotels/<%=hotel.name%>">
+            <button id="delete-review-button">Delete review</button>
+        </form>
+        <%}%>
+      <% if(review.user_img){%>
+        <div class="user-image-container">
+        <%review.user_img.forEach(image=>{%>
+            <div class="user-image">
+                <img src="<%=image%>" />
+            </div>
+       <% })%>
+        </div>
+      <%}%>
+        <div class="user-name"><%=review.user_name%></div>
+        <div><span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <button class="fa fa-star"></button >
+            <span class="fa fa-star"></span></div>
+        <div class="user-rating"><%=review.user_rating%></div>
+        <div class="user-comment"><%=review.user_comment%></div>
+        <hr/>
+  <%  })%> 
+    </div>
+</div>
+
+<script>
+    let index = 0; // Current slide
+const slides = document.querySelectorAll(".swiper-slide");
+
+function showSlide(n) {
+  slides.forEach((slide, i) => {
+    slide.style.display = i === n ? "block" : "none";
+  });
+}
+
+// Next/previous controls
+function changeSlides(n) {
+  index += n;
+  if (index >= slides.length) index = 0;
+  if (index < 0) index = slides.length - 1;
+  showSlide(index);
+}
+
+// Initial display
+showSlide(index);
+</script>

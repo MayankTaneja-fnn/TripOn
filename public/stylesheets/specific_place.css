@@ -1,0 +1,145 @@
+
+
+.temp-place{
+    font-size: 14px;
+    margin-top: 4.5vw;
+    color: rgb(91, 102, 111);
+}
+
+
+
+
+.image{
+     margin-top: 3vw; 
+    height: 35vw;
+    margin-left: 10vw;
+    width:80vw;
+    display: block;
+    /* background-attachment: fixed; */
+    margin-right: 6px;
+    border-radius: 8px;
+  box-shadow: 3px 3px 8px rgb(51, 51, 108);
+}
+
+.prev{
+    /* margin-left: -40vw; */
+    font-size: 40px;
+    color: red;
+    /* display: inline; */
+    /* float: right; */
+    margin-left: 4vw;
+    margin-top: 17vw;  
+    position: absolute;
+}
+
+.next{
+    font-size: 40px;
+    color: red;
+    position: absolute;
+    margin-top: 17vw;
+    margin-left: 93vw;
+}
+
+
+
+.slider {
+  position: relative;
+  /* border: 2px solid black;  */
+  width: 100vw;
+  height: 40vw;
+  overflow: hidden;
+  /* display: inline-block;  */
+}
+
+.slide {
+  width: 800px;
+  height: 400px;
+  /* float: left; */
+}
+
+
+.specific-place-name{
+    margin-top: 1.2vw;;
+    font-weight: bold;
+    font-size: 35px;
+    font-family: Colonna MT;
+    color:rgb(29, 8, 112);
+}
+
+.place-heading{
+    margin-top: 1.9vw;
+    font-weight: bold;
+    font-size: 26px;
+    margin-left: 0.5vw;
+}
+
+.place-about{
+    margin-top: 1vw;
+    margin-left: 1.2vw;
+    font-size: 20px;
+    font-family: Times New Roman;
+    align-items: center;
+    word-spacing: 10px;
+    line-height: 30px;
+}
+
+.route-image{
+    height: 30vw;
+    width: 90vw;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px black;
+}
+
+.pin{
+    height: 2vw;
+    width: 2vw;
+    border-radius: 10px;
+    margin-top: 4px;
+}
+
+.state-name{
+    margin-left: 4px;
+}
+
+.add-review a{
+    text-decoration: none;
+    text-align: center;
+    font-size: 18px;
+}
+
+.user-reviews{
+    display: grid;
+}
+
+.user-image-container{
+    display: flex;
+}
+
+.user-image{
+    display: inline;
+    margin-top: 2vw;
+}
+
+.user-image img{
+    height: 18vw;
+    width: 29vw;
+    margin-right: 2vw;
+}
+
+.user-name{
+    margin-top: 1vw;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.user-comment{
+    font-size: 18px;
+    word-spacing: 10px;
+    line-height: 30px;
+}
+
+/* .swiper-button-next,
+        .swiper-button-prev {
+            color: red; 
+        } */

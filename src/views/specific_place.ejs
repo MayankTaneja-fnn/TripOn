@@ -1,0 +1,122 @@
+
+<div class="temp-place">India > <%=place.state%> > <%=place.name%></div>
+
+<!-- <div class="test">
+    <a  onclick="changeSlides(-1)">❮</a>
+</div> -->
+
+<div class="slider">
+        <a class="prev" onclick="changeSlides(-1)">❮</a>
+        <a class="next" onclick="changeSlides(1)">❯</a>
+    <% place.image.forEach(image1=>{ %>
+        <div class="slide">
+            <img src="<%= image1%>" class="image"/>
+        </div>
+   <% })%>
+</div>
+  
+
+<div class="specific-place-name">
+    <%=place.name%>
+</div>
+
+<div>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRr7pFcaP_n6hFoMX0P5kQe5X4FQ4O7zt7GfQ&s" class="pin"/>
+    <span class="state-name"><%=place.state%> , India</span>
+</div>
+
+<hr/>
+
+<div ><p class="place-heading">
+    About
+</p>
+<p class="place-about"><%=place.desc%></p>
+</div>
+<hr/>
+<div>
+    <p class="place-heading">
+        Story
+    </p>
+    <p class="place-about"><%=place.story%></p>
+</div>
+
+<hr/>
+
+<div>
+    <p class="place-heading">
+        Ways to reach
+    </p>
+        <img src="<%= place.route[0]%>" class="route-image"/>
+        <p class="place-about">
+        <%=place.route[1]%></p>
+</div>
+
+<hr/>
+
+<div class="reviews">
+    <p class="place-heading">User-reviews</p>   
+    <div class="add-review"><a href="/add_review/places/<%=place.name%>"> Add your review</a></div>
+    <div class="user-reviews">
+    <% place.user_review.forEach((review,i)=>{%>
+        <%if(locals.email===review.user_email){%>
+            <form method="get" action="/update_review/places/<%=place.name%>">
+           <button id="edit-review-button">Edit review</button> 
+        </form>
+        <form method="post" action="/delete_review/places/<%=place.name%>">
+            <button id="delete-review-button">Delete review</button>
+        </form>
+        <%}%>
+      <% if(review.user_img){%>
+        <div class="user-image-container">
+        <%review.user_img.forEach(image=>{%>
+            <div class="user-image">
+                <img src="<%=image%>" />
+            </div>
+       <% })%>
+        </div>
+      <%}%>
+        <div class="user-name"><%=review.user_name%></div>
+        <div><span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <button class="fa fa-star"></button >
+            <span class="fa fa-star"></span></div>
+        <div class="user-rating"><%=review.user_rating%></div>
+        <div class="user-comment"><%=review.user_comment%></div>
+        <hr/>
+  <%  })%> 
+    </div>
+</div>
+
+
+<!-- <script>
+    // const editButton=document.getElementById("edit-review-button");
+    const deleteButton=document.getElementById("delete-review-button");
+    // editButton.addEventListener("click",()=>{
+    //     fetch(`/edit_review/places/${place.name}`,{
+    //         method:'PUT'})
+    //         .then();
+    // })
+</script> -->
+
+<script>
+    let index = 0; // Current slide
+const slides = document.querySelectorAll(".slide");
+
+function showSlide(n) {
+  slides.forEach((slide, i) => {
+    slide.style.display = i === n ? "block" : "none";
+  });
+}
+
+// Next/previous controls
+function changeSlides(n) {
+  index += n;
+  if (index >= slides.length) index = 0;
+  if (index < 0) index = slides.length - 1;
+  showSlide(index);
+}
+
+// Initial display
+showSlide(index);
+</script>

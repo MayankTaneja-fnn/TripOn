@@ -1,0 +1,18 @@
+<form method="post" action="/edit_restaurant/<%=restaurant.name%>" enctype="multipart/form-data">
+    <div class="review-heading">Enter Restaurant name</div>
+    <input class="review-input" name="name" value="<%=restaurant.name%>" readonly/>
+    <div class="review-heading">Enter Restaurant place</div>
+    <input class="review-input" name="place" value="<%=restaurant.place%>"/>
+    <div class="review-heading">Enter State name</div>
+    <input class="review-input" name="state" value="<%=restaurant.state%>"/>
+    <div class="review-heading">Enter Restaurant description</div>
+    <textarea name="desc" id="user" rows="6" cols="35"><%=restaurant.desc%></textarea>
+    <div class="review-heading">Enter address of Restaurant</div>
+    <textarea name="address" rows="3" cols="35"><%=restaurant.address%></textarea>
+    <div class="review-heading">Attach images
+    </div>
+    <input type="file" name="imageUrl" id="imageUrl" accept="images?*" multiple>
+    <div>
+    <button type="submit" class="add-button">Update Restaurant</button> 
+
+</form>

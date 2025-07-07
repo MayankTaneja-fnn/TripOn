@@ -1,0 +1,54 @@
+<% if(type==="places"){%>
+    <form>
+        <div class="review-heading">Enter place name</div>
+        <input class="review-input" name="name"/>
+        <div class="review-heading">Enter State name</div>
+        <input class="review-input" name="state"/>
+        <div class="review-heading">Enter place description</div>
+        <textarea name="desc" id="user" rows="6" cols="35"></textarea>
+        <div class="review-heading">Enter place story</div>
+    </form>
+
+<%} else if(type=="hotels"){%>
+    <form method="post" action="/add_hotel" enctype="multipart/form-data">
+        <div class="review-heading">Enter hotel name</div>
+        <input class="review-input" name="name"/>
+        <div class="review-heading">Enter hotel place</div>
+        <input class="review-input" name="place"/>
+        <div class="review-heading">Enter State name</div>
+        <input class="review-input" name="state"/>
+        <div class="review-heading">Enter hotel price</div>
+        <input class="review-input" name="price"/>
+        <div class="review-heading">Enter hotel ratings</div>
+        <input class="review-input" name="rating"/>
+        <div class="review-heading">Enter hotel description</div>
+        <textarea name="desc" id="user" rows="6" cols="35"></textarea>
+        <div class="review-heading">Enter address of hotel</div>
+        <textarea name="address" rows="3" cols="35"></textarea>
+        <div class="review-heading">Attach images
+        </div>
+        <input type="file" name="imageUrl" id="imageUrl" accept="images?*" multiple>
+        <div>
+        <button type="submit" class="add-button">Add Hotel</button> 
+    
+    </form>
+<%} else if(type=="restaurants"){%>
+    <form method="post" action="/add_restaurant" enctype="multipart/form-data">
+        <div class="review-heading">Enter Restaurant name</div>
+        <input class="review-input" name="name"/>
+        <div class="review-heading">Enter Restaurant place</div>
+        <input class="review-input" name="place"/>
+        <div class="review-heading">Enter State name</div>
+        <input class="review-input" name="state"/>
+        <div class="review-heading">Enter Restaurant description</div>
+        <textarea name="desc" id="user" rows="6" cols="35"></textarea>
+        <div class="review-heading">Enter address of Restaurant</div>
+        <textarea name="address" rows="3" cols="35"></textarea>
+        <div class="review-heading">Attach images
+        </div>
+        <input type="file" name="imageUrl" id="imageUrl" accept="images?*" multiple>
+        <div>
+        <button type="submit" class="add-button">Add Restaurant</button> 
+    
+    </form>
+<%}%>

@@ -1,0 +1,20 @@
+<form id="review-form" action="/update_review/<%=type%>/<%=name%>" method="post" enctype="multipart/form-data">
+    <div class="review-heading">Add review for</div>
+    <input name="review_for" class="review-input" value="<%=name%>" readonly>
+    <div class="review-heading">User Name</div>
+    <input name="user_name" class="review-input" placeholder="Enter your name" value="<%=review.user_name%>">
+    <div class="review-heading">Enter rating</div>
+    <input name="user_rating" class="review-input" value="<%=review.user_rating%>">
+    <div class="review-heading">Enter Comment</div>
+    <textarea name="user_comment" id="user" rows="5" cols="36" ><%=review.user_comment%></textarea>
+    <div class="review-heading">Attach images
+    </div>
+    <input type="file" name="imageUrl" id="imageUrl" accept="images?*" multiple>
+    <div>
+    <button type="submit" class="add-button">Update review</button> 
+</div>
+</form>
+
+<!-- <script>
+
+</script> -->

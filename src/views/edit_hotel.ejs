@@ -1,0 +1,22 @@
+<form method="post" action="/edit_hotel/<%=hotel.name%>" enctype="multipart/form-data">
+    <div class="review-heading">Enter hotel name</div>
+    <input class="review-input" name="name" value="<%=hotel.name%>" readonly/>
+    <div class="review-heading">Enter hotel place</div>
+    <input class="review-input" name="place" value="<%=hotel.place%>"/>
+    <div class="review-heading">Enter State name</div>
+    <input class="review-input" name="state" value="<%=hotel.state%>"/>
+    <div class="review-heading">Enter hotel price</div>
+    <input class="review-input" name="price" value="<%=hotel.price%>"/>
+    <div class="review-heading">Enter hotel ratings</div>
+    <input class="review-input" name="rating" value="<%=hotel.rating%>"/>
+    <div class="review-heading">Enter hotel description</div>
+    <textarea name="desc" id="user" rows="6" cols="35"><%=hotel.desc%></textarea>
+    <div class="review-heading">Enter address of hotel</div>
+    <textarea name="address" rows="3" cols="35"><%=hotel.address%></textarea>
+    <div class="review-heading">Attach images
+    </div>
+    <input type="file" name="imageUrl" id="imageUrl" accept="images?*" multiple>
+    <div>
+    <button type="submit" class="add-button">Add Hotel</button> 
+
+</form>

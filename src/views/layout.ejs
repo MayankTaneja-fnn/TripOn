@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<head>
+    <link rel="icon" href="/images/favicon-32x32.png" type="image/x-icon">
+    <link rel="stylesheet" href="/stylesheets/signUp.css">
+    <link rel="stylesheet" href="/stylesheets/layout.css"  >
+    <link rel="stylesheet" href="/stylesheets/specific_place.css">
+    <link rel="stylesheet" href="/stylesheets/hotels.css">
+    <link rel="stylesheet" href="/stylesheets/display_places.css">
+    <link rel="stylesheet" href="/stylesheets/add-review.css">
+    <link rel="stylesheet" href="/stylesheets/messages.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="/js_files/socket.js"></script>
+    
+    <title>Travel Advisory</title>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="fluid-container"> 
+            <a href="/">
+                <img class="Nav-Image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4B8qZm4sMdpOqV13YoNLjC_NE0Nn0sV2iaQ&s"/>
+        </a>
+         <div class="navigate">
+            <div class="nav-items-heading">
+        <a class="nav-items" href="/places" aria-current="page">Places</a></div>
+        <div class="nav-items-heading">
+        <a class="nav-items" href="/hotels" aria-current="page">Hotels</a></div>
+       <div class="nav-items-heading"> <a class="nav-items" href="/restaurants" aria-current="page">Restaurants</a></div>
+       <div class="nav-items-heading"> <a class="nav-items" href="/messages" aria-current="page">Talk</a></div>
+        <div class="list nav-items-heading"><h1 class="list-items" aria-current="page">List</h1>
+        <div class="list-items-options" >
+            <ul>
+                <li class="list-items-option nav-items-heading"><a href="/list_items/places">Place</a></li>
+                <li class="list-items-option nav-items-heading"><a href="/list_items/hotels">Hotel</a></li>
+                <li class="list-items-option nav-items-heading"><a href="/list_items/restaurants">Restaurant</a></li>
+            </ul>
+        </div>
+    </div>
+    <div id="user-act">
+      <%  if(locals.email){%>
+        <a class="Log-In nav-items-heading" href="/logOut">Log Out</a> 
+       <% } else{%>
+        <a class="Log-In nav-items-heading" href="/logIn">LogIn</a>
+        <a class="Log-In nav-items-heading" href="/signUp">SignUp</a>
+       <%}%>
+    </div>
+        </div>
+    </div>
+</nav>
+    <div class="container">
+        <%- body%>
+    </div>
+</body>
+
+</html>

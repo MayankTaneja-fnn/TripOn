@@ -1,0 +1,40 @@
+#review-form{
+    height: 70vw;
+    width: 40vw;
+    margin-top: 10vw;
+    margin-left: 10vw;
+}
+
+.review-heading{
+    margin-top: 2vw;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.review-input{
+    margin-top: .7vw;
+    height: 1.5vw;
+    width: 20vw;
+}
+
+#user{
+    margin-top: .7vw;
+}
+
+#imageUrl{
+    margin-top: .7vw;
+    height: 1.5vw;
+    width: 40vw;
+}
+
+.add-button{
+    margin-top: 2vw;
+    margin-left: 2vw;
+    height: 2vw;
+    width: 10vw;
+    font-size: 16px;
+}
+
+.add-button:hover{
+    color: aqua;
+}
